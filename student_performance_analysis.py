@@ -67,15 +67,17 @@ def add_students():
 
     for i in range(n):
         print(f"\nStudent {i + 1}")
-        name = input("Enter student name: ").strip()
+        while True:
+            name = input("Enter student name: ").strip()
 
-        while name == "" or len(name) > 50:
-            if name == "":
+            if not name:
                 print("Name cannot be empty.")
-        else:
+            elif len(name) > 50:
                 print("Name cannot exceed 50 characters.")
-
-        name = input("Enter student name: ").strip()
+            elif not all(part.isalpha() for part in name.split()):
+                print("Name can contain letters and spaces only. Numbers and special characters are not allowed.")
+            else:
+                break
 
         student_marks = []
         for subject in SUBJECTS:
