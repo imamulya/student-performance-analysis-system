@@ -1,4 +1,4 @@
-# Student Performance Analysis System-
+# Student Performance Analysis System
 
 A Python-based project developed for the Computational Thinking and Programming course at Bennett University.
 
