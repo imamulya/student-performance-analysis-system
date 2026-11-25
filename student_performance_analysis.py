@@ -69,9 +69,13 @@ def add_students():
         print(f"\nStudent {i + 1}")
         name = input("Enter student name: ").strip()
 
-        while name == "":
-            print("Name cannot be empty.")
-            name = input("Enter student name: ").strip()
+        while name == "" or len(name) > 50:
+            if name == "":
+                print("Name cannot be empty.")
+        else:
+                print("Name cannot exceed 50 characters.")
+
+        name = input("Enter student name: ").strip()
 
         student_marks = []
         for subject in SUBJECTS:
